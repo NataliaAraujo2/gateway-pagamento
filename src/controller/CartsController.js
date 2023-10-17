@@ -24,7 +24,7 @@ class CartsController {
     }
   }
 
-  async update(req, re){
+  async update(req, res){
     try {
       const { id } = req.params;
       const { code , price } = req.body;
