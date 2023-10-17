@@ -51,7 +51,12 @@ class CartsController {
 
       const cart = Cart.findById(id);
 
-      const cart = await 
+      if (!cart) {
+        return res.status(404).json();
+      }
+
+      await cart.deleteOne();
+      return res.status(200).json()
 
     } catch (error) {
       console.error(error);
